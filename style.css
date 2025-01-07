@@ -1,0 +1,24 @@
+h1 {
+    font-family: 'silkscreen', sans-serif;
+    text-shadow: 0px 4px 4px #A6F62E;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    font-family: 'silkscreen', sans-serif;
+    cursor: default;
+}
+
+.library {
+    display: grid;
+    grid-template: repeat(auto-fit, minmax(200px, 1ft));
+}
+
+.book {
+    border-style: solid;
+    display: grid;
+    width: fit-content;
+}
