@@ -12,6 +12,18 @@ li {
     cursor: default;
 }
 
+.container {
+    display: grid;
+    grid-template-rows: 1fr 3fr;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px;
+}
+
 .library {
     display: grid;
     grid-template: repeat(auto-fit, minmax(200px, 1ft));
@@ -20,5 +32,5 @@ li {
 .book {
     border-style: solid;
     display: grid;
-    width: fit-content;
+    grid-template-columns: 2fr 2fr 2fr 1fr 1fr;
 }

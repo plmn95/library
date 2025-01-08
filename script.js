@@ -47,7 +47,7 @@ function displayLibrary(books) {
             haveRead.checked = false
         }
         book.appendChild(haveRead)
-        let btnRemove = document.createElement('button')
+        let btnRemove = document.createElement('p')
         btnRemove.innerText = 'delete'
         btnRemove.classList.add('btnRemove')
         btnRemove.addEventListener('click', () => {
