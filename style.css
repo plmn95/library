@@ -3,18 +3,14 @@ h1 {
     text-shadow: 0px 4px 4px #A6F62E;
 }
 
-ul {
-    list-style-type: none;
-}
-
-li {
+.btnAdd {
     font-family: 'silkscreen', sans-serif;
     cursor: default;
 }
 
 .container {
     display: grid;
-    grid-template-rows: 1fr 3fr;
+    grid-template-rows: 1fr 0.1fr 3fr;
 }
 
 .header {
@@ -24,13 +20,155 @@ li {
     padding: 14px;
 }
 
+.legend {
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr 1.2fr 1fr 1fr;
+    padding: 14px;
+}
+
+.legend p {
+    margin-top: auto;
+    margin-bottom: auto;
+    font-family: "Abel", serif;
+    font-weight: 700;
+    font-size: 20px;
+    font-style: normal;
+    display: flex;
+    margin-left: 14px;
+}
+
 .library {
     display: grid;
-    grid-template: repeat(auto-fit, minmax(200px, 1ft));
+    grid-template: repeat(auto-fit, 1fr);
+    border-style: solid;
+    border-width: 4px;
+    border-radius: 16px;
+    height: fit-content;
+    padding: 14px;
+    gap: 14px;
+    background: #A6F62E;
 }
 
 .book {
+    padding-left: 14px;
+    padding-right: 14px;
     border-style: solid;
     display: grid;
-    grid-template-columns: 2fr 2fr 2fr 1fr 1fr;
+    grid-template-columns: 2fr 2fr 2fr 1fr 1fr 1fr;
+    height: 50px;
+    margin: 1px;
+    background-color: white;
+}
+
+.book p, .book input {
+    cursor: default;
+    margin-top: auto;
+    margin-bottom: auto;
+    display: flex;
+    font-family: "Abel", serif;
+    font-weight: 400;
+    font-size: 18px;
+    font-style: normal;
+}
+
+.book input {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid black;
+    field-sizing: content;
+    min-width: 50px;
+    max-width: fit-content
+}
+
+.book .btn {
+    margin: auto;
+}
+
+.btnHaveRead {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 8px;
+    width: 3.5rem;
+}
+
+.haveReadTrue {
+    background-color: black;
+    color: white;
+}
+
+.haveReadFalse {
+    background-color: white;
+    color: black;
+}
+
+dialog {
+    background-color: #A6F62E;
+    border-width: 6px;
+    border-bottom-width: 12px;
+    border-radius: 16px;
+}
+
+.form {
+    display: grid;
+    gap: 14px;
+    grid-template-rows: 2fr 1fr 1fr 1fr 1fr 2fr;
+    justify-items: start;
+    padding: 14px;
+}
+
+.form h2 {
+    cursor: default;
+    font-family: "Sixtyfour", serif;
+    font-weight: 400;
+    letter-spacing: 12px;
+    justify-self: center;
+}
+
+.form * {
+    margin: 0;
+}
+
+.form label {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    font-family: 'Spline Sans Mono', serif;
+    font-size: 24px;
+}
+
+.form input {
+    background-color: #A6F62E;
+    flex: 1;
+    font-family: 'Spline Sans Mono', serif;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid black;
+}
+
+.formStatus {
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+}
+
+.formButtons {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-self: flex-end;
+}
+
+.formButtons p {
+    cursor: default;
+    font-family: 'Sixtyfour', serif;
+    font-weight: 400;
+    font-size: 24px;
+}
+
+.btnHaveReadSelected {
+    text-decoration: underline;
 }
