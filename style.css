@@ -1,3 +1,7 @@
+body {
+    padding: 24px;
+}
+
 h1 {
     cursor: default;
     font-family: 'silkscreen', sans-serif;
