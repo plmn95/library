@@ -1,8 +1,10 @@
-function Book(title, author, pages, haveRead) {
-    this.title = title
-    this.author = author
-    this.pages = pages
-    this.haveRead = haveRead
+class Book {
+    constructor(title, author, pages, haveRead) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.haveRead = haveRead
+    }
 }
 
 const braveNewWorld = new Book('Brave New World', 'Aldous Huxley', '288', true)
