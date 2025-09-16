@@ -1,8 +1,8 @@
 class Book {
     constructor(title, author, pages, haveRead) {
-        this.title = title;
-        this.author = author;
-        this.pages = pages;
+        this.title = title
+        this.author = author
+        this.pages = pages
         this.haveRead = haveRead
     }
 }
@@ -19,7 +19,6 @@ function addToLibrary(book) {
 const library = document.querySelector('.library')
 
 function displayLibrary(books) {
-    console.log(books)
     for(let i = 0; i < books.length; i++) {
         let book = document.createElement('div')
         book.classList.add('book')
@@ -130,6 +129,7 @@ function addBook(title, author, pages, haveRead) {
     displayLibrary(myLibrary)
 }
 
+const form = document.querySelector('.form')
 const btnAdd = document.querySelector('.btnAdd')
 const addBookDialog = document.querySelector('dialog')
 const btnCloseModal = document.querySelector('.btnCloseModal')
@@ -160,13 +160,33 @@ btnFormUnread.addEventListener('click', () => {
 })
 
 btnSubmit.addEventListener('click', () => {
-    const name = document.querySelector('.inputName').value
-    const author = document.querySelector('.inputAuthor').value
-    const pages = document.querySelector('.inputPages').value
-    let haveRead = true
-    if(btnFormUnread.classList.contains('btnHaveReadSelected')) {
-        haveRead = false
+    form.dispatchEvent(new Event('Submit', { cancelable:true }))
+})
+
+form.addEventListener('Submit', (event) => {
+    
+    event.preventDefault()
+    const inputs = form.querySelectorAll('input')
+    let isValid = true
+
+    inputs.forEach(input => {
+        if(input.value == '') {
+            isValid = false
+        }
+    })
+
+    if(isValid) {
+        const name = document.querySelector('.inputName').value
+        const author = document.querySelector('.inputAuthor').value
+        const pages = document.querySelector('.inputPages').value
+        let haveRead = true
+        if(btnFormUnread.classList.contains('btnHaveReadSelected')) {
+            haveRead = false
+        }
+        addBook(name, author, pages, haveRead)
+        addBookDialog.close()
+    } else {
+        window.alert('input all fields!')
     }
-    addBook(name, author, pages, haveRead)
-    addBookDialog.close()
+
 })
